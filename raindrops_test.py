@@ -60,6 +60,18 @@ class RaindropsTest(unittest.TestCase):
     def test_the_sound_for_12121_is_12121(self):
         self.assertEqual(convert(12121), "12121")
 
+    def test_negative(self):
+        self.assertEqual(convert(-1), "-1")
+
+    def test_float_no_decimal(self):
+        self.assertEqual(convert(3.0), "Pling")
+
+    def test_float_with_decimal(self):
+        self.assertEqual(convert(3.3), "3.3")
+
+    def test_none(self):
+         self.assertRaises(TypeError, convert, None)
+
 
 if __name__ == '__main__':
     unittest.main()
